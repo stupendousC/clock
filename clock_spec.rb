@@ -2,6 +2,6 @@
 
 require 'minitest/autorun'
 require 'minitest/reporters'
-require_relative 'bill'
+require_relative 'clock'
 
 Minitest::Reporters.use!
