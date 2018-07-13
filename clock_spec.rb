@@ -5,3 +5,9 @@ require 'minitest/reporters'
 require_relative 'clock'
 
 Minitest::Reporters.use!
+
+
+describe "Clock" do
+
+
+end
