@@ -1,0 +1,1 @@
+# clock_spec.rb
