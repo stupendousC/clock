@@ -9,5 +9,7 @@ Minitest::Reporters.use!
 
 describe "Clock" do
 
+  it "will return a string" do
 
+  end
 end
