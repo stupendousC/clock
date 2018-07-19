@@ -7,8 +7,10 @@ require_relative 'clock'
 Minitest::Reporters.use!
 
 describe "Clock" do
-  it "will return a string" do
+  it "can be called with hours, minutes and seconds as arguments" do
+    time = clock(8, 14, 27)
+
     # the `clock` method must return a string
-    expect(clock() ).must_be_instance_of String
+    expect(time).must_be_instance_of String
   end
 end
