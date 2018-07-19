@@ -1,5 +1,5 @@
 # clock.rb
 
-def clock()
+def clock(hours, minutes, seconds)
   return ''
 end
