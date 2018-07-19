@@ -19,4 +19,15 @@ describe "Clock" do
 
     expect((time)).must_equal "11:14:27"
   end
+
+  it "will display leading zeros for numbers smaller than 10" do
+    time = clock(11, 8, 14)
+    expect(time).must_equal "11:08:14"
+
+    time = clock(8, 11, 14);
+    expect(time).must_equal "08:11:14"
+
+    time = clock(11, 14, 8);
+    expect(time).must_equal "11:14:08"
+  end
 end
