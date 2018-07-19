@@ -30,4 +30,18 @@ describe "Clock" do
     time = clock(11, 14, 8);
     expect(time).must_equal "11:14:08"
   end
+
+  it "will raise an error when given an invalid argument" do
+    proc {
+      clock(25, 14, 8)
+    }.must_raise ArgumentError
+
+    proc {
+      clock(11, 60, 8)
+    }.must_raise ArgumentError
+
+    proc {
+      clock(11, 14, 60)
+    }.must_raise ArgumentError
+  end  
 end
