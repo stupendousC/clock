@@ -32,16 +32,16 @@ describe "Clock" do
   end
 
   it "will raise an error when given an invalid argument" do
-    proc {
+    expect {
       clock(25, 14, 8)
     }.must_raise ArgumentError
 
-    proc {
+    expect {
       clock(11, 60, 8)
     }.must_raise ArgumentError
 
-    proc {
+    expect {
       clock(11, 14, 60)
     }.must_raise ArgumentError
-  end  
+  end
 end
