@@ -7,6 +7,8 @@ def clock(hours, minutes, seconds)
   time_fields.each_with_index do |field, index|
     if field > max_values[index]
       raise ArgumentError.new("#{field} is too large")
+    elsif field < 0
+      raise ArgumentError.new("#{field} is invalid (negative)")
     end
   end
 
