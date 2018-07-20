@@ -20,6 +20,3 @@ def clock(hours, minutes, seconds)
 
   return "#{time_fields[0]}:#{time_fields[1]}:#{time_fields[2]}"
 end
-
-
-clock(23, 59, 59)
