@@ -44,4 +44,18 @@ describe "Clock" do
       clock(11, 14, 60)
     }.must_raise ArgumentError
   end
+
+  it "will raise an error when given a negative argument" do
+    expect {
+      clock(-1, 14, 8)
+    }.must_raise ArgumentError
+
+    expect {
+      clock(11, -1, 8)
+    }.must_raise ArgumentError
+
+    expect {
+      clock(11, 14, -1)
+    }.must_raise ArgumentError
+  end
 end
