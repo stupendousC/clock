@@ -2,7 +2,9 @@
 
 require 'minitest/autorun'
 require 'minitest/reporters'
-require_relative 'clock'
+
+
+require_relative '../lib/clock'
 
 Minitest::Reporters.use!
 
