@@ -1,5 +1,7 @@
 # clock.rb
 
+#hi dan! How's it going
+
 def scrub(value, upper_bound)
   if value < 0 || value > upper_bound
     raise ArgumentError, "Invalid value #{value}"
