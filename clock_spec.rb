@@ -23,20 +23,20 @@ describe "clock" do
     expect(result).must_be_instance_of String
   end
 
-  it "produces the correct time" do
+  it "pads numbers with leading zeros" do
     # Arrange
     hours = 8
-    minutes = 14
+    minutes = 4
     seconds = 3
 
     # Act
     result = clock(hours, minutes, seconds)
 
     # Assert
-    expect(result).must_equal "08:14:03"
+    expect(result).must_equal "08:04:03"
   end
 
-  it "handles a different time" do
+  it "handles 2-digit numbers" do
     # Arrange
     hours = 10
     minutes = 22
@@ -47,5 +47,46 @@ describe "clock" do
 
     # Assert
     expect(result).must_equal "10:22:35"
+  end
+
+  it "doesn't allow negative numbers" do
+    # Arrange
+    values = [
+      {hours: -1, minutes: 1, seconds: 1},
+      {hours: 1, minutes: -1, seconds: 1},
+      {hours: 1, minutes: 1, seconds: -1},
+    ]
+
+    # Act & Assert
+    values.each do |time|
+      expect {
+        clock(
+          time[:hours],
+          time[:minutes],
+          time[:seconds]
+        )
+      }.must_raise ArgumentError
+    end
+  end
+
+  it "doesn't allow too big numbers" do
+    # Arrange
+    values = [
+      {hours: 24, minutes: 59, seconds: 59},
+      {hours: 23, minutes: 60, seconds: 59},
+      {hours: 23, minutes: 59, seconds: 60},
+    ]
+
+    # Act & Assert
+    values.each do |time|
+      # puts "Calling clock with #{time}"
+      expect {
+        clock(
+          time[:hours],
+          time[:minutes],
+          time[:seconds]
+        )
+      }.must_raise ArgumentError
+    end
   end
 end
